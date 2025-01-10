@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="sem.xsd"?>
+<recenze xmlns="urn:x-koubevo:schemas:restaurace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:x-koubevo:schemas:restaurace sem.xsd">
+    <restaurace>
+        <id>152698</id>
+        <nazev>Brambory Na Pankráci</nazev>
+        <popis>Podnik se nachází v Praze na Pankráci a kromě výborného YUMMY jídla a originálního bramborového konceptu nabízí i krásný interiér a otevřenou kuchyň.</popis>
+        <majitel></majitel>
+        <mesto>Praha</mesto>
+        <stat>Česko</stat>
+        <oteviraci_doba>
+            <pondeli>
+                <od>11:00:00</od>
+                <do>23:00:00</do>
+            </pondeli>
+            <utery>
+                <od>10:00:00</od>
+                <do>22:00:00</do>
+            </utery>
+            <streda zavreno="true"/>
+            <ctvrtek>
+                <od>11:00:00</od>
+                <do>23:00:00</do>
+            </ctvrtek>
+            <patek>
+                <od>11:00:00</od>
+                <do>00:00:00</do>
+            </patek>
+            <sobota>
+                <od>12:00:00</od>
+                <do>00:00:00</do>
+            </sobota>
+            <nedele>
+                <od>12:00:00</od>
+                <do>21:00:00</do>
+            </nedele>
+        </oteviraci_doba>
+        <menu>https://www.bramborynapankraci.cz/menu/</menu>
+        <kategorie>Degustace</kategorie>
+        <kategorie>Brambory</kategorie>
+        <hodnoceni>
+            <slovni>Jídlo a obsulha skvělé. Interiér vypadá hezky, jen se připravte na hluk. Pokud půjdete okolo, určitě doporučujeme navštívit!</slovni>
+            <hvezdicky>
+                <misto>4</misto>
+                <obsluha>5</obsluha>
+                <jidlo>5</jidlo>
+                <finalni>4.5</finalni>
+            </hvezdicky>
+        </hodnoceni>
+        <top_jidlo>
+            <nazev>Hovězí degustace</nazev>
+            <cena mena="czk">458</cena>
+            <foto>brambory.jpeg</foto>
+        </top_jidlo>
+        <cena_osoba mena="czk">500</cena_osoba>
+        <platba_kartou>ano</platba_kartou>
+        <qerko>ano</qerko>
+        <poledni_menu>každý den</poledni_menu>
+        <datum_navstevy>2024-10-10</datum_navstevy>
+    </restaurace>
+    <restaurace>
+        <id>203457</id>
+        <nazev>Pizza Paradise</nazev>
+        <popis>Italská restaurace s širokou nabídkou pizz, těstovin a salátů, která se nachází v  Klášterci nad Ohří.</popis>
+        <majitel>Luigi Rossi</majitel>
+        <mesto> Klášterec nad Ohří</mesto>
+        <stat>Česko</stat>
+        <oteviraci_doba>
+            <pondeli>
+                <od>11:00:00</od>
+                <do>22:00:00</do>
+            </pondeli>
+            <utery>
+                <od>11:00:00</od>
+                <do>22:00:00</do>
+            </utery>
+            <streda>
+                <od>11:00:00</od>
+                <do>22:00:00</do>
+            </streda>
+            <ctvrtek>
+                <od>11:00:00</od>
+                <do>22:00:00</do>
+            </ctvrtek>
+            <patek>
+                <od>11:00:00</od>
+                <do>23:00:00</do>
+            </patek>
+            <sobota>
+                <od>12:00:00</od>
+                <do>23:00:00</do>
+            </sobota>
+            <nedele>
+                <od>12:00:00</od>
+                <do>22:00:00</do>
+            </nedele>
+        </oteviraci_doba>
+        <menu>https://www.pizzaparadise.cz</menu>
+        <kategorie>Pizza</kategorie>
+        <kategorie>Italská kuchyně</kategorie>
+        <hodnoceni>
+            <slovni>Pizza je výborná, obsluha přátelská. Doporučujeme vyzkoušet jejich domácí tiramisu!</slovni>
+            <hvezdicky>
+                <misto>5</misto>
+                <obsluha>4</obsluha>
+                <jidlo>5</jidlo>
+                <finalni>4.5</finalni>
+            </hvezdicky>
+        </hodnoceni>
+        <top_jidlo>
+            <nazev>Margarita</nazev>
+            <cena mena="czk">150</cena>
+            <foto>pizza.jpeg</foto>
+        </top_jidlo>
+        <cena_osoba mena="czk">300</cena_osoba>
+        <platba_kartou>ano</platba_kartou>
+        <qerko>ne</qerko>
+        <poledni_menu>pracovní dny</poledni_menu>
+        <datum_navstevy>2024-11-20</datum_navstevy>
+    </restaurace>
+</recenze>
