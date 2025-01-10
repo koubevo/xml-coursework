@@ -59,11 +59,11 @@
         <datum_navstevy>2024-10-10</datum_navstevy>
     </restaurace>
     <restaurace>
-        <id>203457</id>
+        <id>152699</id>
         <nazev>Pizza Paradise</nazev>
         <popis>Italská restaurace s širokou nabídkou pizz, těstovin a salátů, která se nachází v  Klášterci nad Ohří.</popis>
         <majitel>Luigi Rossi</majitel>
-        <mesto> Klášterec nad Ohří</mesto>
+        <mesto>Klášterec nad Ohří</mesto>
         <stat>Česko</stat>
         <oteviraci_doba>
             <pondeli>
@@ -117,5 +117,124 @@
         <qerko>ne</qerko>
         <poledni_menu>pracovní dny</poledni_menu>
         <datum_navstevy>2024-11-20</datum_navstevy>
+    </restaurace>
+    <restaurace>
+        <id>152700</id>
+        <nazev>Café Imperial</nazev>
+        <popis>Ikonická restaurace v Praze, známá pro svůj krásný interiér ve stylu art deco.</popis>
+        <majitel>Zdeněk Polreich</majitel>
+        <mesto>Praha</mesto>
+        <stat>Česko</stat>
+        <oteviraci_doba>
+            <pondeli>
+                <od>07:00:00</od>
+                <do>23:00:00</do>
+            </pondeli>
+            <utery>
+                <od>07:00:00</od>
+                <do>23:00:00</do>
+            </utery>
+            <streda>
+                <od>07:00:00</od>
+                <do>23:00:00</do>
+            </streda>
+            <ctvrtek>
+                <od>07:00:00</od>
+                <do>23:00:00</do>
+            </ctvrtek>
+            <patek>
+                <od>07:00:00</od>
+                <do>23:00:00</do>
+            </patek>
+            <sobota>
+                <od>07:00:00</od>
+                <do>23:00:00</do>
+            </sobota>
+            <nedele>
+                <od>07:00:00</od>
+                <do>23:00:00</do>
+            </nedele>
+        </oteviraci_doba>
+        <menu>https://www.cafeimperial.cz/jidelni-listek-2/</menu>
+        <kategorie>Pizza</kategorie>
+        <kategorie>Luxusní restaurace</kategorie>
+        <hodnoceni>
+            <slovni>Předkrmy dobré, hlavní chody skvělé, dezerty dokonalé. Doporučujeme rezervaci!</slovni>
+            <hvezdicky>
+                <misto>5</misto>
+                <obsluha>5</obsluha>
+                <jidlo>5</jidlo>
+                <finalni>5</finalni>
+            </hvezdicky>
+        </hodnoceni>
+        <top_jidlo>
+            <nazev>Čokoládový fondant</nazev>
+            <cena mena="czk">120</cena>
+            <foto>imperial.jpeg</foto>
+        </top_jidlo>
+        <cena_osoba mena="czk">1000</cena_osoba>
+        <platba_kartou>ano</platba_kartou>
+        <qerko>ne</qerko>
+        <poledni_menu>každý den</poledni_menu>
+        <datum_navstevy>2024-12-05</datum_navstevy>
+    </restaurace>
+    <restaurace>
+        <id>152701</id>
+        <nazev>Goldies</nazev>
+        <popis>Nejlepší burgery v Praze. Sedněte na Hlaváku do vlaku, za 4 hoďky jste v Berlíně a šup na Goldies!</popis>
+        <majitel>Anna Müller</majitel>
+        <mesto>Berlín</mesto>
+        <stat>Česko</stat>
+        <oteviraci_doba>
+            <pondeli>
+                <od>12:00:00</od>
+                <do>22:00:00</do>
+            </pondeli>
+            <utery>
+                <od>12:00:00</od>
+                <do>22:00:00</do>
+            </utery>
+            <streda>
+                <od>12:00:00</od>
+                <do>22:00:00</do>
+            </streda>
+            <ctvrtek>
+                <od>12:00:00</od>
+                <do>22:00:00</do>
+            </ctvrtek>
+            <patek>
+                <od>12:00:00</od>
+                <do>00:00:00</do>
+            </patek>
+            <sobota>
+                <od>12:00:00</od>
+                <do>00:00:00</do>
+            </sobota>
+            <nedele>
+                <od>12:00:00</od>
+                <do>22:00:00</do>
+            </nedele>
+        </oteviraci_doba>
+        <menu>https://www.goldies-smashburger.de/#Menu</menu>
+        <kategorie>Burgery</kategorie>
+        <hodnoceni>
+            <slovni>Nejlepší smashburgery, co jsme kdy zkusili! Místo je nonstop plné, ale obsaluha je super rychlá.</slovni>
+            <hvezdicky>
+                <misto>4</misto>
+                <obsluha>5</obsluha>
+                <jidlo>5</jidlo>
+                <finalni>5</finalni>
+            </hvezdicky>
+        </hodnoceni>
+        <top_jidlo>
+            <nazev>Super Smash BLT Double</nazev>
+            <cena mena="eur">25</cena>
+            <foto>goldies.jpeg</foto>
+        </top_jidlo>
+        <cena_osoba mena="eur">25</cena_osoba>
+        <platba_kartou>ano</platba_kartou>
+        <qerko>ne</qerko>
+        <poledni_menu>ne</poledni_menu>
+        <datum_navstevy>2024-06-06</datum_navstevy>
     </restaurace>
 </recenze>
