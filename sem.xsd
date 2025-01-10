@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:x-koubevo:schemas:restaurace" xmlns="urn:x-koubevo:schemas:restaurace">
+    
+    <xs:element name="recenze" type="recenzeType"/>
+        
+    <xs:complexType name="recenzeType">
+        <xs:sequence>
+            <xs:element name="restaurace" type="restauraceType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="restauraceType">
+        <xs:sequence>
+            <xs:element name="id" type="idType"/>
+            <xs:element name="nazev" type="nazevType"/>
+            <xs:element name="popis" type="popisType"/>
+            <xs:element name="majitel" type="majitelType"/>
+            <xs:element name="mesto" type="mestoType"/>
+            <xs:element name="stat" type="statType"/>
+            <xs:element name="oteviraci_doba" type="oteviraciDobaType"/>
+            <xs:element name="menu" type="menuType"/>
+            <xs:element name="kategorie" type="kategorieType" maxOccurs="unbounded"/>
+            <xs:element name="hodnoceni" type="hodnoceniType"/>
+            <xs:element name="top_jidlo" type="topJidloType"/>
+            <xs:element name="cena_osoba" type="cenaType"/>
+            <xs:element name="platba_kartou" type="platbaKartouType"/>
+            <xs:element name="qerko" type="qerkoType"/>
+            <xs:element name="poledni_menu" type="poledniMenuType"/>
+            <xs:element name="datum_navstevy" type="datumNavstevyType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:integer">
+            <xs:minExclusive value="100000"/>
+            <xs:maxExclusive value="999999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="nazevType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="popisType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="majitelType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="mestoType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="statType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:complexType name="oteviraciDobaType">
+        <xs:sequence>
+            <xs:element name="pondeli" type="casType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="utery" type="casType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="streda" type="casType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ctvrtek" type="casType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="patek" type="casType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="sobota" type="casType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="nedele" type="casType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="casType">
+        <xs:sequence>
+            <xs:element name="od" type="xs:time" minOccurs="0"/>
+            <xs:element name="do" type="xs:time" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="zavreno" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="menuType">
+        <xs:restriction base="xs:anyURI"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="kategorieType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:complexType name="hodnoceniType">
+        <xs:sequence>
+            <xs:element name="slovni" type="slovniType"/>
+            <xs:element name="hvezdicky" type="hvezdickyType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="slovniType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:complexType name="hvezdickyType">
+        <xs:sequence>
+            <xs:element name="misto" type="cisloHvezdicekType"/>
+            <xs:element name="obsluha" type="cisloHvezdicekType"/>
+            <xs:element name="jidlo" type="cisloHvezdicekType"/>
+            <xs:element name="finalni" type="cisloHvezdicekType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="cisloHvezdicekType">
+        <xs:restriction base="xs:decimal"/>
+    </xs:simpleType>
+    
+    <xs:complexType name="topJidloType">
+        <xs:sequence>
+            <xs:element name="nazev" type="nazevType"/>
+            <xs:element name="cena" type="cenaType"/>
+            <xs:element name="foto" type="fotoType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="cenaType">
+        <xs:simpleContent>
+            <xs:extension base="xs:integer">
+                <xs:attribute name="mena" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="fotoType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[\w,\s-]+\.(jpg|jpeg|png)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="platbaKartouType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ano"/>
+            <xs:enumeration value="ne"/>
+            <xs:enumeration value="někdy"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="qerkoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ano"/>
+            <xs:enumeration value="ne"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="poledniMenuType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="každý den"/>
+            <xs:enumeration value="pracovní dny"/>
+            <xs:enumeration value="víkendy"/>
+            <xs:enumeration value="ne"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="datumNavstevyType">
+        <xs:restriction base="xs:date"/>
+    </xs:simpleType>
+    
+</xs:schema> 
+
