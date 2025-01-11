@@ -51,7 +51,7 @@
         <top_jidlo ref_restaurace_id="152698">
             <nazev>Hovězí degustace</nazev>
             <cena mena="CZK">458</cena>
-            <foto>brambory.jpeg</foto>
+            <foto>brambory.jpg</foto>
         </top_jidlo>
         <cena_osoba mena="CZK">500</cena_osoba>
         <platba_kartou>ano</platba_kartou>
@@ -111,7 +111,7 @@
         <top_jidlo ref_restaurace_id="152699">
             <nazev>Margarita</nazev>
             <cena mena="CZK">150</cena>
-            <foto>pizza.jpeg</foto>
+            <foto>pizza.jpg</foto>
         </top_jidlo>
         <cena_osoba mena="CZK">300</cena_osoba>
         <platba_kartou>ano</platba_kartou>
@@ -171,7 +171,7 @@
         <top_jidlo ref_restaurace_id="152700">
             <nazev>Čokoládový fondant</nazev>
             <cena mena="CZK">120</cena>
-            <foto>imperial.jpeg</foto>
+            <foto>imperial.jpg</foto>
         </top_jidlo>
         <cena_osoba mena="CZK">1000</cena_osoba>
         <platba_kartou>ano</platba_kartou>
@@ -230,7 +230,7 @@
         <top_jidlo ref_restaurace_id="152701">
             <nazev>Super Smash BLT Double</nazev>
             <cena mena="EUR">25</cena>
-            <foto>goldies.jpeg</foto>
+            <foto>goldies.jpg</foto>
         </top_jidlo>
         <cena_osoba mena="EUR">25</cena_osoba>
         <platba_kartou>ano</platba_kartou>
