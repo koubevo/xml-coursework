@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:x-koubevo:schemas:restaurace" xmlns="urn:x-koubevo:schemas:restaurace">
     
-    <xs:element name="recenze" type="recenzeType"/>
+    <xs:element name="recenze" type="recenzeType">
+        <xs:key name="restauraceKey">
+            <xs:selector xpath="restaurace"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <xs:keyref name="topJidloRef" refer="restauraceKey">
+            <xs:selector xpath="restaurace/top_jidlo"/>
+            <xs:field xpath="@ref_restaurace_id"/>
+        </xs:keyref>
+    </xs:element>
         
     <xs:complexType name="recenzeType">
         <xs:sequence>
@@ -120,6 +129,7 @@
             <xs:element name="cena" type="cenaType"/>
             <xs:element name="foto" type="fotoType"/>
         </xs:sequence>
+        <xs:attribute name="ref_restaurace_id" type="idType" use="required"/>
     </xs:complexType>
     
     <xs:complexType name="cenaType">
