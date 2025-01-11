@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../schema/sem.xsd"?>
-<?xml-model href="../schema/sem.schematron" schematypens="http://purl.oclc.org/dsdl/sch"?>
+<?xml-model href="../schema/sem.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <recenze xmlns="urn:x-koubevo:schemas:restaurace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:x-koubevo:schemas:restaurace ../schema/sem.xsd">
     <restaurace>
         <id>152698</id>
