@@ -49,10 +49,10 @@
         </hodnoceni>
         <top_jidlo>
             <nazev>Hovězí degustace</nazev>
-            <cena mena="czk">458</cena>
+            <cena mena="CZK">458</cena>
             <foto>brambory.jpeg</foto>
         </top_jidlo>
-        <cena_osoba mena="czk">500</cena_osoba>
+        <cena_osoba mena="CZK">500</cena_osoba>
         <platba_kartou>ano</platba_kartou>
         <qerko>ano</qerko>
         <poledni_menu>každý den</poledni_menu>
@@ -109,10 +109,10 @@
         </hodnoceni>
         <top_jidlo>
             <nazev>Margarita</nazev>
-            <cena mena="czk">150</cena>
+            <cena mena="CZK">150</cena>
             <foto>pizza.jpeg</foto>
         </top_jidlo>
-        <cena_osoba mena="czk">300</cena_osoba>
+        <cena_osoba mena="CZK">300</cena_osoba>
         <platba_kartou>ano</platba_kartou>
         <qerko>ne</qerko>
         <poledni_menu>pracovní dny</poledni_menu>
@@ -169,10 +169,10 @@
         </hodnoceni>
         <top_jidlo>
             <nazev>Čokoládový fondant</nazev>
-            <cena mena="czk">120</cena>
+            <cena mena="CZK">120</cena>
             <foto>imperial.jpeg</foto>
         </top_jidlo>
-        <cena_osoba mena="czk">1000</cena_osoba>
+        <cena_osoba mena="CZK">1000</cena_osoba>
         <platba_kartou>ano</platba_kartou>
         <qerko>ne</qerko>
         <poledni_menu>každý den</poledni_menu>
@@ -228,10 +228,10 @@
         </hodnoceni>
         <top_jidlo>
             <nazev>Super Smash BLT Double</nazev>
-            <cena mena="eur">25</cena>
+            <cena mena="EUR">25</cena>
             <foto>goldies.jpeg</foto>
         </top_jidlo>
-        <cena_osoba mena="eur">25</cena_osoba>
+        <cena_osoba mena="EUR">25</cena_osoba>
         <platba_kartou>ano</platba_kartou>
         <qerko>ne</qerko>
         <poledni_menu>ne</poledni_menu>
