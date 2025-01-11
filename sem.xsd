@@ -108,7 +108,10 @@
     </xs:complexType>
     
     <xs:simpleType name="cisloHvezdicekType">
-        <xs:restriction base="xs:decimal"/>
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
     </xs:simpleType>
     
     <xs:complexType name="topJidloType">
