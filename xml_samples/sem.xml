@@ -91,9 +91,7 @@
                 <od>12:00:00</od>
                 <do>23:00:00</do>
             </sobota>
-            <nedele>
-                <od>12:00:00</od>
-                <do>22:00:00</do>
+            <nedele zavreno="true">
             </nedele>
         </oteviraci_doba>
         <menu>https://www.pizzaparadise.cz</menu>
@@ -102,10 +100,10 @@
         <hodnoceni>
             <slovni>Pizza je výborná, obsluha přátelská. Doporučujeme vyzkoušet jejich domácí tiramisu!</slovni>
             <hvezdicky>
-                <misto>5</misto>
-                <obsluha>4</obsluha>
-                <jidlo>5</jidlo>
-                <finalni>4.5</finalni>
+                <misto>2</misto>
+                <obsluha>3</obsluha>
+                <jidlo>4</jidlo>
+                <finalni>3</finalni>
             </hvezdicky>
         </hodnoceni>
         <top_jidlo ref_restaurace_id="152699">
