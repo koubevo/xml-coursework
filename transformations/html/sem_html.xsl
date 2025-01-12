@@ -180,7 +180,7 @@
     <xsl:template match="datum_navstevy">
         <p>
             Datum návštěvy: 
-            <xsl:value-of select="format-date(xs:date(.), '[MNn] [Y]')"/>
+            <xsl:value-of select="format-date(xs:date(.), '[D01].[M01].[Y2]')"/>
         </p>
     </xsl:template>
     
