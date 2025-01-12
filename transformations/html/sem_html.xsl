@@ -30,27 +30,30 @@
                         <link rel="stylesheet" type="text/css" href="sem_html.css"/>
                     </head>
                     <body>
-                        <a href="index.html" class="back">Všechny recenze</a>
+                        <a href="index.html" class="back">← Všechny recenze</a>
                         <div>
                             <h1><xsl:value-of select="nazev"/></h1>
                             <xsl:apply-templates select="majitel"/>
                         </div>
-                        <div>
-                            <xsl:value-of select="mesto"/>
-                            <xsl:text> | </xsl:text>
-                            <xsl:value-of select="stat"/>
+                        <div class="mb">
+                            <p>
+                                <xsl:value-of select="mesto"/>
+                                <xsl:text> | </xsl:text>
+                                <xsl:value-of select="stat"/>
+                            </p>
                         </div>
-                        <div>
+                        <div class="mb">
                             <xsl:apply-templates select="kategorie"/>
                         </div>
-                        <div>
+                        <div class="mb-2">
                             <xsl:apply-templates select="popis"/>
                             <xsl:apply-templates select="menu"/>
                         </div>
-                        <div>
+                        <div class="mb-2">
                             <xsl:apply-templates select="hodnoceni"/>
+                            <xsl:apply-templates select="top_jidlo"/>
                         </div>
-                        <div>
+                        <div class="mb">
                             <xsl:apply-templates select="oteviraci_doba"/>
                         </div>
                     </body>
@@ -64,7 +67,7 @@
     </xsl:template>
     
     <xsl:template match="majitel">
-        <span>
+        <span class="owner">
             <xsl:if test="string-length(normalize-space(.)) > 0">
                 Majitel: <xsl:value-of select="."/>
             </xsl:if>
@@ -76,7 +79,7 @@
     </xsl:template>
     
     <xsl:template match="oteviraci_doba">
-        <h2>Otevírací doba</h2>
+        <h2 class="mb">Otevírací doba</h2>
         <table border="1">
             <thead>
                 <tr>
@@ -116,7 +119,7 @@
     </xsl:template>
     
     <xsl:template match="popis">
-        <p><xsl:value-of select="text()"/></p>
+        <p class="mb"><xsl:value-of select="text()"/></p>
     </xsl:template>
     
     <xsl:template match="menu">
@@ -124,8 +127,9 @@
     </xsl:template>
     
     <xsl:template match="hodnoceni">
-        <h2>Naše hodnocení</h2>
-        <ul>
+        <h2 class="mb">Naše hodnocení</h2>
+        <p class="mb"><xsl:value-of select="slovni"/></p>
+        <ul class="mb-2">
             <xsl:for-each select="hvezdicky/*">
                 <li>
                     <xsl:value-of select="local-name()"/>: 
@@ -137,7 +141,11 @@
                 </li>
             </xsl:for-each>
         </ul>
-        <p><xsl:value-of select="slovni"/></p>
+    </xsl:template>   
+    
+    <xsl:template match="top_jidlo">
+        <h3 class="mb">Nejlepší jídlo</h3>
+        <p><xsl:value-of select="nazev"/><xsl:text> </xsl:text><xsl:value-of select="cena"/><xsl:text> </xsl:text><xsl:value-of select="cena/@mena"/></p>
     </xsl:template>
     
 </xsl:stylesheet>
