@@ -33,6 +33,7 @@
                         <a href="index.html" class="back">← Všechny recenze</a>
                         <div>
                             <h1><xsl:value-of select="nazev"/></h1>
+                            <xsl:apply-templates select="top_jidlo/foto"/>
                             <xsl:apply-templates select="majitel"/>
                         </div>
                         <div class="mb">
@@ -53,13 +54,25 @@
                             <xsl:apply-templates select="hodnoceni"/>
                             <xsl:apply-templates select="top_jidlo"/>
                         </div>
-                        <div class="mb">
+                        <div class="mb-2">
                             <xsl:apply-templates select="oteviraci_doba"/>
+                        </div>
+                        <div class="mb-2">
+                            <h2>Další informace</h2>
+                            <xsl:apply-templates select="cena_osoba"/>
+                            <xsl:apply-templates select="platba_kartou"/>
+                            <xsl:apply-templates select="qerko"/>
+                            <xsl:apply-templates select="poledni_menu"/>
+                            <xsl:apply-templates select="datum_navstevy"/>
                         </div>
                     </body>
                 </html>
             </xsl:result-document>
         </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="top_jidlo/foto">
+        <img src="./imgs/{text()}"/>
     </xsl:template>
     
     <xsl:template match="restaurace">
@@ -146,6 +159,29 @@
     <xsl:template match="top_jidlo">
         <h3 class="mb">Nejlepší jídlo</h3>
         <p><xsl:value-of select="nazev"/><xsl:text> </xsl:text><xsl:value-of select="cena"/><xsl:text> </xsl:text><xsl:value-of select="cena/@mena"/></p>
+    </xsl:template>
+    
+    <xsl:template match="cena_osoba">
+        <p>~ cena/osoba: <xsl:value-of select="text()"/><xsl:text> </xsl:text><xsl:value-of select="@mena"/></p>
+    </xsl:template>
+    
+    <xsl:template match="platba_kartou">
+        <p>platba kartou: <xsl:value-of select="text()"/></p>
+    </xsl:template>
+    
+    <xsl:template match="qerko">
+        <p>qerko: <xsl:value-of select="text()"/></p>
+    </xsl:template>
+    
+    <xsl:template match="poledni_menu">
+        <p>polední menu: <xsl:value-of select="text()"/></p>
+    </xsl:template>
+    
+    <xsl:template match="datum_navstevy">
+        <p>
+            Datum návštěvy: 
+            <xsl:value-of select="format-date(xs:date(.), '[MNn] [Y]')"/>
+        </p>
     </xsl:template>
     
 </xsl:stylesheet>
