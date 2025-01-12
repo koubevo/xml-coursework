@@ -93,7 +93,7 @@
     </xsl:template>
     
     <xsl:template match="top_jidlo/foto">
-        <img src="./imgs/{text()}" alt="{../nazev} - obrázek jídla"/>
+        <img src="./imgs/{text()}" alt="{../../nazev} - obrázek jídla"/>
     </xsl:template>
     
     <xsl:template match="majitel">
