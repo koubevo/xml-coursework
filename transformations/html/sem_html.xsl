@@ -15,11 +15,32 @@
                     <link rel="stylesheet" type="text/css" href="sem_html.css"/>
                 </head>
                 <body>
-                    <h1>Recenze restaurací</h1>
-                    <div><xsl:apply-templates select="recenze/restaurace"/></div>
+                    <h1 class="mb">Recenze restaurací</h1>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Název</th>
+                                <th>Město</th>
+                                <th>Hodnocení</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <xsl:for-each select="recenze/restaurace">
+                                <xsl:sort select="hodnoceni/hvezdicky/finalni" data-type="number" order="descending"/>
+                                <tr>
+                                    <td><a href="{id}.html"><xsl:value-of select="nazev"/></a></td>
+                                    <td><xsl:value-of select="mesto"/></td>
+                                    <td>
+                                        <xsl:apply-templates select="hodnoceni/hvezdicky/finalni" mode="menu"/>
+                                    </td>
+                                </tr>
+                            </xsl:for-each>
+                        </tbody>
+                    </table>
                 </body>
             </html>
         </xsl:result-document>
+        
         
         <xsl:for-each select="recenze/restaurace">
             <xsl:variable name="file" select="concat(id, '.html')"/>
@@ -73,10 +94,6 @@
     
     <xsl:template match="top_jidlo/foto">
         <img src="./imgs/{text()}"/>
-    </xsl:template>
-    
-    <xsl:template match="restaurace">
-        <a href="{id}.html"><xsl:value-of select="nazev"/></a>
     </xsl:template>
     
     <xsl:template match="majitel">
@@ -183,5 +200,18 @@
             <xsl:value-of select="format-date(xs:date(.), '[D01].[M01].[Y2]')"/>
         </p>
     </xsl:template>
+    
+    <xsl:template match="hodnoceni/hvezdicky/finalni" mode="menu">
+        <xsl:variable name="rating" select="number(.)"/>
+        <xsl:choose>
+            <xsl:when test="$rating &gt;= 4">
+                <xsl:value-of select="text()"/><xsl:text> </xsl:text>★
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="text()"/><xsl:text> </xsl:text>☆
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
     
 </xsl:stylesheet>
