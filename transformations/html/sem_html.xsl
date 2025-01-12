@@ -16,7 +16,7 @@
                 </head>
                 <body>
                     <h1 class="mb">Recenze restaurací</h1>
-                    <table border="1">
+                    <table>
                         <thead>
                             <tr>
                                 <th>Název</th>
@@ -93,7 +93,7 @@
     </xsl:template>
     
     <xsl:template match="top_jidlo/foto">
-        <img src="./imgs/{text()}"/>
+        <img src="./imgs/{text()}" alt="{../nazev} - obrázek jídla"/>
     </xsl:template>
     
     <xsl:template match="majitel">
@@ -110,7 +110,7 @@
     
     <xsl:template match="oteviraci_doba">
         <h2 class="mb">Otevírací doba</h2>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>Den</th>
