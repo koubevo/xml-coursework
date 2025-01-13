@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="urn:x-koubevo:schemas:restaurace" xmlns="urn:x-koubevo:schemas:restaurace">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    elementFormDefault="qualified" 
+    targetNamespace="urn:x-koubevo:schemas:restaurace" 
+    xmlns="urn:x-koubevo:schemas:restaurace">
     
     <xs:element name="recenze" type="recenzeType">
         <xs:key name="restauraceKey">
@@ -47,11 +50,11 @@
     </xs:simpleType>
     
     <xs:simpleType name="nazevType">
-        <xs:restriction base="xs:string"/>
+        <xs:restriction base="strng"/>
     </xs:simpleType>
     
     <xs:simpleType name="popisType">
-        <xs:restriction base="xs:string"/>
+        <xs:restriction base="strng"/>
     </xs:simpleType>
     
     <xs:simpleType name="majitelType">
@@ -61,11 +64,11 @@
     </xs:simpleType>
     
     <xs:simpleType name="mestoType">
-        <xs:restriction base="xs:string"/>
+        <xs:restriction base="strng"/>
     </xs:simpleType>
     
     <xs:simpleType name="statType">
-        <xs:restriction base="xs:string"/>
+        <xs:restriction base="strng"/>
     </xs:simpleType>
     
     <xs:complexType name="oteviraciDobaType">
@@ -93,7 +96,7 @@
     </xs:simpleType>
     
     <xs:simpleType name="kategorieType">
-        <xs:restriction base="xs:string"/>
+        <xs:restriction base="strng"/>
     </xs:simpleType>
     
     <xs:complexType name="hodnoceniType">
@@ -104,7 +107,7 @@
     </xs:complexType>
     
     <xs:simpleType name="slovniType">
-        <xs:restriction base="xs:string"/>
+        <xs:restriction base="strng"/>
     </xs:simpleType>
     
     <xs:complexType name="hvezdickyType">
@@ -137,7 +140,7 @@
             <xs:extension base="xs:integer">
                 <xs:attribute name="mena" use="required">
                     <xs:simpleType>
-                        <xs:restriction base="xs:string">
+                        <xs:restriction base="strng">
                             <xs:enumeration value="USD"/>
                             <xs:enumeration value="CZK"/>
                             <xs:enumeration value="EUR"/>
@@ -151,13 +154,13 @@
     
     
     <xs:simpleType name="fotoType">
-        <xs:restriction base="xs:string">
+        <xs:restriction base="strng">
             <xs:pattern value="[\w,\s-]+\.(jpg|jpeg|png)"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="platbaKartouType">
-        <xs:restriction base="xs:string">
+        <xs:restriction base="strng">
             <xs:enumeration value="ano"/>
             <xs:enumeration value="ne"/>
             <xs:enumeration value="někdy"/>
@@ -165,14 +168,14 @@
     </xs:simpleType>
     
     <xs:simpleType name="qerkoType">
-        <xs:restriction base="xs:string">
+        <xs:restriction base="strng">
             <xs:enumeration value="ano"/>
             <xs:enumeration value="ne"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="poledniMenuType">
-        <xs:restriction base="xs:string">
+        <xs:restriction base="strng">
             <xs:enumeration value="každý den"/>
             <xs:enumeration value="pracovní dny"/>
             <xs:enumeration value="víkendy"/>
@@ -182,6 +185,12 @@
     
     <xs:simpleType name="datumNavstevyType">
         <xs:restriction base="xs:date"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="strng">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
     </xs:simpleType>
     
 </xs:schema> 
