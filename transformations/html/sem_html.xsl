@@ -53,9 +53,8 @@
                     <body>
                         <a href="index.html" class="back">← Všechny recenze</a>
                         <div>
-                            <h1><xsl:value-of select="nazev"/></h1>
+                            <h1 class="mb-2"><xsl:value-of select="nazev"/></h1>
                             <xsl:apply-templates select="top_jidlo/foto"/>
-                            <xsl:apply-templates select="majitel"/>
                         </div>
                         <div class="mb">
                             <p>
@@ -68,6 +67,7 @@
                             <xsl:apply-templates select="kategorie"/>
                         </div>
                         <div class="mb-2">
+                            <xsl:apply-templates select="majitel"/>
                             <xsl:apply-templates select="popis"/>
                             <xsl:apply-templates select="menu"/>
                         </div>
@@ -93,7 +93,7 @@
     </xsl:template>
     
     <xsl:template match="top_jidlo/foto">
-        <img src="./imgs/{text()}" alt="{../../nazev} - obrázek jídla"/>
+        <img src="./imgs/{text()}" alt="{../../nazev} - obrázek jídla" class="mb"/>
     </xsl:template>
     
     <xsl:template match="majitel">
