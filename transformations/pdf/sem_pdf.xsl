@@ -108,79 +108,89 @@
     </xsl:template>
     
     <xsl:template name="popis">
-        <fo:block font-weight="200" font-size="60%" color="#001427" space-after="2mm">
-            <xsl:if test="string-length(normalize-space(r:majitel)) > 0">
-                Majitel: <xsl:apply-templates select="r:majitel"/>
-            </xsl:if>
-        </fo:block>
-        <fo:block space-after="2mm"><xsl:apply-templates select="r:popis"/></fo:block>
-        <fo:block space-after="4mm">Menu si můžete prohlédnout: <fo:basic-link external-destination="{r:menu}" color="#FFC914" font-weight="bold">zde</fo:basic-link>.
+        <fo:block keep-together.within-page="always">
+            <fo:block font-weight="200" font-size="60%" color="#001427" space-after="2mm">
+                <xsl:if test="string-length(normalize-space(r:majitel)) > 0">
+                    Majitel: <xsl:apply-templates select="r:majitel"/>
+                </xsl:if>
+            </fo:block>
+            <fo:block space-after="2mm"><xsl:apply-templates select="r:popis"/></fo:block>
+            <fo:block space-after="4mm">Menu si můžete prohlédnout: <fo:basic-link external-destination="{r:menu}" color="#FFC914" font-weight="bold">zde</fo:basic-link>.
+            </fo:block>
         </fo:block>
     </xsl:template>
     
     <xsl:template name="hodnoceni">        
         <!-- HVEZDICKY!! -->
-        <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Naše hodnocení</fo:block>
-        <fo:block space-after="1mm">
-            <xsl:value-of select="r:hodnoceni/r:slovni"/>
-        </fo:block>
-        <fo:block>
-            Místo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:misto"/> ★
-        </fo:block>
-        <fo:block>
-            Obsluha: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:obsluha"/> ★
-        </fo:block>
-        <fo:block>
-            Jídlo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:jidlo"/> ★
-        </fo:block>
-        <fo:block space-after="2mm">
-            Finální hodnocení: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:finalni"/> ★
+        <fo:block keep-together.within-page="always">
+            <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Naše hodnocení</fo:block>
+            <fo:block space-after="1mm">
+                <xsl:value-of select="r:hodnoceni/r:slovni"/>
+            </fo:block>
+            <fo:block>
+                Místo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:misto"/> ★
+            </fo:block>
+            <fo:block>
+                Obsluha: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:obsluha"/> ★
+            </fo:block>
+            <fo:block>
+                Jídlo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:jidlo"/> ★
+            </fo:block>
+            <fo:block space-after="2mm">
+                Finální hodnocení: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:finalni"/> ★
+            </fo:block>
         </fo:block>
     </xsl:template>
     
     <xsl:template name="nejlepsi_jidlo">
-        <fo:block font-size="12pt" font-weight="bold" space-after="1mm">Nejlepší jídlo</fo:block>
-        <fo:block space-after="3mm">
-            <xsl:value-of select="r:top_jidlo/r:nazev"/><xsl:text> </xsl:text><xsl:value-of select="r:top_jidlo/r:cena"/><xsl:text> </xsl:text><xsl:value-of select="r:top_jidlo/r:cena/@mena"/>
+        <fo:block keep-together.within-page="always">
+            <fo:block font-size="12pt" font-weight="bold" space-after="1mm">Nejlepší jídlo</fo:block>
+            <fo:block space-after="3mm">
+                <xsl:value-of select="r:top_jidlo/r:nazev"/><xsl:text> </xsl:text><xsl:value-of select="r:top_jidlo/r:cena"/><xsl:text> </xsl:text><xsl:value-of select="r:top_jidlo/r:cena/@mena"/>
+            </fo:block>
         </fo:block>
     </xsl:template>
     
     <xsl:template name="oteviraci_doba">
-        <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Otevírací doba</fo:block>
-        <fo:block space-after="2mm">
-            <xsl:for-each select="r:oteviraci_doba/*">
-                <fo:block>
-                    <xsl:choose>
-                        <xsl:when test="local-name() = 'pondeli'">Pondělí</xsl:when>
-                        <xsl:when test="local-name() = 'utery'">Úterý</xsl:when>
-                        <xsl:when test="local-name() = 'streda'">Středa</xsl:when>
-                        <xsl:when test="local-name() = 'ctvrtek'">Čtvrtek</xsl:when>
-                        <xsl:when test="local-name() = 'patek'">Pátek</xsl:when>
-                        <xsl:when test="local-name() = 'sobota'">Sobota</xsl:when>
-                        <xsl:when test="local-name() = 'nedele'">Neděle</xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="local-name()"/>
-                        </xsl:otherwise>
-                    </xsl:choose>:  
-                    <xsl:choose>
-                        <xsl:when test="@zavreno='true'">Zavřeno</xsl:when>
-                        <xsl:otherwise>
-                            <!-- aby se to neoddelilo od sebe ty sekce -->
-                            <xsl:value-of select="format-time(xs:time(r:od), '[H01]:[m01]')"/> - <xsl:value-of select="format-time(xs:time(r:do), '[H01]:[m01]')"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </fo:block>
-            </xsl:for-each>
+        <fo:block keep-together.within-page="always">
+            <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Otevírací doba</fo:block>
+            <fo:block space-after="2mm">
+                <xsl:for-each select="r:oteviraci_doba/*">
+                    <fo:block>
+                        <xsl:choose>
+                            <xsl:when test="local-name() = 'pondeli'">Pondělí</xsl:when>
+                            <xsl:when test="local-name() = 'utery'">Úterý</xsl:when>
+                            <xsl:when test="local-name() = 'streda'">Středa</xsl:when>
+                            <xsl:when test="local-name() = 'ctvrtek'">Čtvrtek</xsl:when>
+                            <xsl:when test="local-name() = 'patek'">Pátek</xsl:when>
+                            <xsl:when test="local-name() = 'sobota'">Sobota</xsl:when>
+                            <xsl:when test="local-name() = 'nedele'">Neděle</xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="local-name()"/>
+                            </xsl:otherwise>
+                        </xsl:choose>:  
+                        <xsl:choose>
+                            <xsl:when test="@zavreno='true'">Zavřeno</xsl:when>
+                            <xsl:otherwise>
+                                <!-- aby se to neoddelilo od sebe ty sekce -->
+                                <xsl:value-of select="format-time(xs:time(r:od), '[H01]:[m01]')"/> - <xsl:value-of select="format-time(xs:time(r:do), '[H01]:[m01]')"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </fo:block>
+                </xsl:for-each>
+            </fo:block>
         </fo:block>
     </xsl:template>
     
     <xsl:template name="dalsi_informace">
-        <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Další informace</fo:block>
-        <fo:block>~ Cena/osoba: <xsl:value-of select="r:cena_osoba"/><xsl:text> </xsl:text><xsl:value-of select="r:cena_osoba/@mena"/></fo:block>
-        <fo:block>Platba kartou: <xsl:value-of select="r:platba_kartou"/></fo:block>
-        <fo:block>Qerko: <xsl:value-of select="r:qerko"/></fo:block>
-        <fo:block>Polední menu: <xsl:value-of select="r:poledni_menu"/></fo:block>
-        <fo:block>Datum návštěvy: <xsl:value-of select="format-date(xs:date(r:datum_navstevy), '[D01].[M01].[Y2]')"/></fo:block>
+        <fo:block keep-together.within-page="always">
+            <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Další informace</fo:block>
+            <fo:block>~ Cena/osoba: <xsl:value-of select="r:cena_osoba"/><xsl:text> </xsl:text><xsl:value-of select="r:cena_osoba/@mena"/></fo:block>
+            <fo:block>Platba kartou: <xsl:value-of select="r:platba_kartou"/></fo:block>
+            <fo:block>Qerko: <xsl:value-of select="r:qerko"/></fo:block>
+            <fo:block>Polední menu: <xsl:value-of select="r:poledni_menu"/></fo:block>
+            <fo:block>Datum návštěvy: <xsl:value-of select="format-date(xs:date(r:datum_navstevy), '[D01].[M01].[Y2]')"/></fo:block>
+        </fo:block>
     </xsl:template>
     
     
