@@ -11,22 +11,22 @@
     <xsl:template match="/">
         <fo:root>
             <fo:layout-master-set>
-                <fo:simple-page-master master-name="a4" page-height="297mm" page-width="210mm" margin="15mm" line-height="1.15" font-family="Verdana" color="#001427">
+                <fo:simple-page-master master-name="a4" page-height="297mm" page-width="210mm" margin-bottom="5mm" margin-top="5mm" margin-left="12mm" margin-right="12mm" line-height="1.15" font-family="Verdana" color="#001427">
                     <fo:region-body margin-top="10mm" margin-bottom="10mm"/>
-                    <fo:region-before extent="10mm"/>
-                    <fo:region-after extent="10mm"/>
+                    <fo:region-before extent="3mm"/>
+                    <fo:region-after extent="3mm"/>
                 </fo:simple-page-master>
             </fo:layout-master-set>
             
             <fo:page-sequence master-reference="a4">               
                 <fo:static-content flow-name="xsl-region-before">
-                    <fo:block text-align="center">
+                    <fo:block text-align="center" font-size="8pt">
                         kouv13
                     </fo:block>
                 </fo:static-content>
                 
                 <fo:static-content flow-name="xsl-region-after">
-                    <fo:block text-align="center" font-size="10pt">
+                    <fo:block text-align="center" font-size="8pt">
                         Str. <fo:page-number/>
                     </fo:block>
                 </fo:static-content>
@@ -38,7 +38,19 @@
                 </fo:flow>
             </fo:page-sequence>
             
-            <fo:page-sequence master-reference="a4" font-family="Verdana" color="#001427">
+            <fo:page-sequence master-reference="a4" font-family="Verdana" color="#001427">                
+                <fo:static-content flow-name="xsl-region-before">
+                    <fo:block text-align="center" font-size="8pt">
+                        kouv13
+                    </fo:block>
+                </fo:static-content>
+                
+                <fo:static-content flow-name="xsl-region-after">
+                    <fo:block text-align="center" font-size="8pt">
+                        Str. <fo:page-number/>
+                    </fo:block>
+                </fo:static-content>
+                
                 <fo:flow flow-name="xsl-region-body">
                     <fo:block space-before="10mm" font-size="16pt" font-weight="bold">
                         Seznam restaurací
@@ -53,6 +65,18 @@
             </fo:page-sequence>
             
             <fo:page-sequence master-reference="a4" font-family="Verdana" color="#001427" font-size="11pt">
+                <fo:static-content flow-name="xsl-region-before">
+                    <fo:block text-align="center" font-size="8pt">
+                        kouv13
+                    </fo:block>
+                </fo:static-content>
+                
+                <fo:static-content flow-name="xsl-region-after">
+                    <fo:block text-align="center" font-size="8pt">
+                        Str. <fo:page-number/>
+                    </fo:block>
+                </fo:static-content>
+                
                 <fo:flow flow-name="xsl-region-body">
                     <fo:block>
                         <xsl:apply-templates/>
@@ -172,7 +196,6 @@
                         <xsl:choose>
                             <xsl:when test="@zavreno='true'">Zavřeno</xsl:when>
                             <xsl:otherwise>
-                                <!-- aby se to neoddelilo od sebe ty sekce -->
                                 <xsl:value-of select="format-time(xs:time(r:od), '[H01]:[m01]')"/> - <xsl:value-of select="format-time(xs:time(r:do), '[H01]:[m01]')"/>
                             </xsl:otherwise>
                         </xsl:choose>
