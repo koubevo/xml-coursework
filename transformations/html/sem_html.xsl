@@ -138,8 +138,8 @@
                                 <td colspan="2">Zavřeno</td>
                             </xsl:when>
                             <xsl:otherwise>
-                                <td><xsl:value-of select="od"/></td>
-                                <td><xsl:value-of select="do"/></td>
+                                <td><xsl:value-of select="format-time(xs:time(od), '[H01]:[m01]')"/></td>
+                                <td><xsl:value-of select="format-time(xs:time(do), '[H01]:[m01]')"/></td>
                             </xsl:otherwise>
                         </xsl:choose>
                     </tr>

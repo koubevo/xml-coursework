@@ -43,7 +43,7 @@
                     <fo:block space-before="10mm" font-size="16pt" font-weight="bold">
                         Seznam restaurací
                     </fo:block>
-                    
+                    <!-- MENU ABY FUNGOVALY PROKLIKY -->
                     <xsl:for-each select="/r:recenze/r:restaurace">
                         <fo:block font-size="14pt" space-before="10pt">
                             <xsl:value-of select="r:nazev"/>
@@ -100,7 +100,7 @@
     <xsl:template name="tagy">
         <fo:block space-after="2mm">
             <xsl:for-each select="r:kategorie">
-                <fo:inline padding="2pt" space-end="2pt" background-color="#FFC914" font-weight="bold" font-size="80%">
+                <fo:inline padding="2pt" space-end="1mm" background-color="#FFC914" font-weight="bold" font-size="80%">
                     <xsl:value-of select="."/>
                 </fo:inline>
             </xsl:for-each>
@@ -108,14 +108,18 @@
     </xsl:template>
     
     <xsl:template name="popis">
-        <!-- kdyz neni majitel nevypsat -->
-        <fo:block font-weight="200" font-size="60%" color="#001427" space-after="2mm">Majitel: <xsl:apply-templates select="r:majitel"/></fo:block>
+        <fo:block font-weight="200" font-size="60%" color="#001427" space-after="2mm">
+            <xsl:if test="string-length(normalize-space(r:majitel)) > 0">
+                Majitel: <xsl:apply-templates select="r:majitel"/>
+            </xsl:if>
+        </fo:block>
         <fo:block space-after="2mm"><xsl:apply-templates select="r:popis"/></fo:block>
         <fo:block space-after="4mm">Menu si můžete prohlédnout: <fo:basic-link external-destination="{r:menu}" color="#FFC914" font-weight="bold">zde</fo:basic-link>.
         </fo:block>
     </xsl:template>
     
-    <xsl:template name="hodnoceni">
+    <xsl:template name="hodnoceni">        
+        <!-- HVEZDICKY!! -->
         <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Naše hodnocení</fo:block>
         <fo:block space-after="1mm">
             <xsl:value-of select="r:hodnoceni/r:slovni"/>
@@ -146,14 +150,23 @@
         <fo:block space-after="2mm">
             <xsl:for-each select="r:oteviraci_doba/*">
                 <fo:block>
-                    <xsl:value-of select="local-name()"/>: 
+                    <xsl:choose>
+                        <xsl:when test="local-name() = 'pondeli'">Pondělí</xsl:when>
+                        <xsl:when test="local-name() = 'utery'">Úterý</xsl:when>
+                        <xsl:when test="local-name() = 'streda'">Středa</xsl:when>
+                        <xsl:when test="local-name() = 'ctvrtek'">Čtvrtek</xsl:when>
+                        <xsl:when test="local-name() = 'patek'">Pátek</xsl:when>
+                        <xsl:when test="local-name() = 'sobota'">Sobota</xsl:when>
+                        <xsl:when test="local-name() = 'nedele'">Neděle</xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="local-name()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>:  
                     <xsl:choose>
                         <xsl:when test="@zavreno='true'">Zavřeno</xsl:when>
                         <xsl:otherwise>
-                            <!-- format! -->
-                            <!-- dny hezky! -->
                             <!-- aby se to neoddelilo od sebe ty sekce -->
-                            <xsl:value-of select="r:od"/> - <xsl:value-of select="r:do"/>
+                            <xsl:value-of select="format-time(xs:time(r:od), '[H01]:[m01]')"/> - <xsl:value-of select="format-time(xs:time(r:do), '[H01]:[m01]')"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </fo:block>
@@ -167,8 +180,7 @@
         <fo:block>Platba kartou: <xsl:value-of select="r:platba_kartou"/></fo:block>
         <fo:block>Qerko: <xsl:value-of select="r:qerko"/></fo:block>
         <fo:block>Polední menu: <xsl:value-of select="r:poledni_menu"/></fo:block>
-        <!-- format! -->
-        <fo:block>Datum návštěvy: <xsl:value-of select="r:datum_navstevy"/></fo:block>
+        <fo:block>Datum návštěvy: <xsl:value-of select="format-date(xs:date(r:datum_navstevy), '[D01].[M01].[Y2]')"/></fo:block>
     </xsl:template>
     
     
