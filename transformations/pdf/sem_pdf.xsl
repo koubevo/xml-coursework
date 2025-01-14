@@ -32,7 +32,7 @@
                 </fo:static-content>
                 
                 <fo:flow flow-name="xsl-region-body">
-                    <fo:block font-size="26pt" font-weight="bold" text-align="center" space-after="20mm" space-before="50mm">
+                    <fo:block font-size="26pt" font-weight="bold" text-align="center" space-after="20mm" space-before="50mm" margin-top="130mm">
                         Recenze restaurací
                     </fo:block>
                 </fo:flow>
@@ -55,10 +55,11 @@
                     <fo:block space-before="10mm" font-size="16pt" font-weight="bold">
                         Seznam restaurací
                     </fo:block>
-                    <!-- MENU ABY FUNGOVALY PROKLIKY -->
                     <xsl:for-each select="/r:recenze/r:restaurace">
                         <fo:block font-size="14pt" space-before="10pt">
-                            <xsl:value-of select="r:nazev"/>
+                            <fo:basic-link internal-destination="{r:id}">
+                                <xsl:value-of select="r:nazev"/>
+                            </fo:basic-link>
                         </fo:block>
                     </xsl:for-each>
                 </fo:flow>
@@ -89,7 +90,7 @@
     <xsl:template match="r:recenze">
         <xsl:for-each select="r:restaurace">
             <fo:block break-before="page"/>
-            <fo:block>
+            <fo:block id="{r:id}">
                 <xsl:call-template name="nazev"/>
                 <xsl:call-template name="obrazek"></xsl:call-template>
                 <xsl:call-template name="lokalita"/>
