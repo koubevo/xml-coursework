@@ -160,6 +160,7 @@
         <h2 class="mb">Naše hodnocení</h2>
         <p class="mb"><xsl:value-of select="slovni"/></p>
         <ul class="mb-2">
+            <!-- diakritika -->
             <xsl:for-each select="hvezdicky/*">
                 <li>
                     <xsl:value-of select="local-name()"/>: 
@@ -179,19 +180,19 @@
     </xsl:template>
     
     <xsl:template match="cena_osoba">
-        <p>~ cena/osoba: <xsl:value-of select="text()"/><xsl:text> </xsl:text><xsl:value-of select="@mena"/></p>
+        <p>~ Cena/osoba: <xsl:value-of select="text()"/><xsl:text> </xsl:text><xsl:value-of select="@mena"/></p>
     </xsl:template>
     
     <xsl:template match="platba_kartou">
-        <p>platba kartou: <xsl:value-of select="text()"/></p>
+        <p>Platba kartou: <xsl:value-of select="text()"/></p>
     </xsl:template>
     
     <xsl:template match="qerko">
-        <p>qerko: <xsl:value-of select="text()"/></p>
+        <p>Qerko: <xsl:value-of select="text()"/></p>
     </xsl:template>
     
     <xsl:template match="poledni_menu">
-        <p>polední menu: <xsl:value-of select="text()"/></p>
+        <p>Polední menu: <xsl:value-of select="text()"/></p>
     </xsl:template>
     
     <xsl:template match="datum_navstevy">
