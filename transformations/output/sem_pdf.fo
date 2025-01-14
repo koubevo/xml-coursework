@@ -9,4 +9,80 @@
                             Název: Brambory Na Pankráci</fo:block><fo:block font-size="16pt" space-before="10pt">
                             Název: Pizza Paradise</fo:block><fo:block font-size="16pt" space-before="10pt">
                             Název: Café Imperial</fo:block><fo:block font-size="16pt" space-before="10pt">
-                            Název: Goldies</fo:block></fo:flow></fo:page-sequence></fo:root>
+                            Název: Goldies</fo:block></fo:flow></fo:page-sequence><fo:page-sequence master-reference="a4"><fo:flow flow-name="xsl-region-body"><fo:block><fo:block break-before="page"/><fo:block><fo:block>Brambory Na Pankráci</fo:block><fo:block>Praha | Česko</fo:block><fo:block><fo:inline font-style="italic">Degustace</fo:inline><fo:inline> | </fo:inline><fo:inline font-style="italic">Brambory</fo:inline><fo:inline> | </fo:inline></fo:block><fo:block>Podnik se nachází v Praze na Pankráci a kromě výborného YUMMY jídla a originálního bramborového konceptu nabízí i krásný interiér a otevřenou kuchyň.</fo:block><fo:block>Menu si můžete prohlédnout : 
+            <fo:basic-link external-destination="https://www.bramborynapankraci.cz/menu/">
+                zde
+            </fo:basic-link>.
+        </fo:block><fo:block>Naše hodnocení</fo:block><fo:block/><fo:block>
+            Místo:  ★
+        </fo:block><fo:block>
+            Obsluha:  ★
+        </fo:block><fo:block>
+            Jídlo:  ★
+        </fo:block><fo:block>
+            Finální hodnocení:  ★
+        </fo:block><fo:block>Nejlepší jídlo</fo:block><fo:block>Hovězí degustace - 458CZK</fo:block><fo:block>Otevírací doba</fo:block><fo:block>pondeli: 
+                11:00:00 - 23:00:00</fo:block><fo:block>utery: 
+                10:00:00 - 22:00:00</fo:block><fo:block>streda: 
+                Zavřeno</fo:block><fo:block>ctvrtek: 
+                11:00:00 - 23:00:00</fo:block><fo:block>patek: 
+                11:00:00 - 00:00:00</fo:block><fo:block>sobota: 
+                12:00:00 - 00:00:00</fo:block><fo:block>nedele: 
+                12:00:00 - 21:00:00</fo:block><fo:block>Další informace</fo:block><fo:block>~ Cena/osoba: 500CZK</fo:block><fo:block>Platba kartou: ano</fo:block><fo:block>Qerko: ano</fo:block><fo:block>Polední menu: každý den</fo:block><fo:block>Datum návštěvy: 2024-10-10</fo:block></fo:block><fo:block break-before="page"/><fo:block><fo:block>Pizza Paradise</fo:block><fo:block>Klášterec nad Ohří | Česko</fo:block><fo:block><fo:inline font-style="italic">Pizza</fo:inline><fo:inline> | </fo:inline><fo:inline font-style="italic">Italská kuchyně</fo:inline><fo:inline> | </fo:inline></fo:block><fo:block>Italská restaurace s širokou nabídkou pizz, těstovin a salátů, která se nachází v  Klášterci nad Ohří.</fo:block><fo:block>Menu si můžete prohlédnout : 
+            <fo:basic-link external-destination="https://www.pizzaparadise.cz">
+                zde
+            </fo:basic-link>.
+        </fo:block><fo:block>Naše hodnocení</fo:block><fo:block/><fo:block>
+            Místo:  ★
+        </fo:block><fo:block>
+            Obsluha:  ★
+        </fo:block><fo:block>
+            Jídlo:  ★
+        </fo:block><fo:block>
+            Finální hodnocení:  ★
+        </fo:block><fo:block>Nejlepší jídlo</fo:block><fo:block>Margarita - 150CZK</fo:block><fo:block>Otevírací doba</fo:block><fo:block>pondeli: 
+                11:00:00 - 22:00:00</fo:block><fo:block>utery: 
+                11:00:00 - 22:00:00</fo:block><fo:block>streda: 
+                11:00:00 - 22:00:00</fo:block><fo:block>ctvrtek: 
+                11:00:00 - 22:00:00</fo:block><fo:block>patek: 
+                11:00:00 - 23:00:00</fo:block><fo:block>sobota: 
+                12:00:00 - 23:00:00</fo:block><fo:block>nedele: 
+                Zavřeno</fo:block><fo:block>Další informace</fo:block><fo:block>~ Cena/osoba: 300CZK</fo:block><fo:block>Platba kartou: ano</fo:block><fo:block>Qerko: ne</fo:block><fo:block>Polední menu: pracovní dny</fo:block><fo:block>Datum návštěvy: 2024-11-20</fo:block></fo:block><fo:block break-before="page"/><fo:block><fo:block>Café Imperial</fo:block><fo:block>Praha | Česko</fo:block><fo:block><fo:inline font-style="italic">Pizza</fo:inline><fo:inline> | </fo:inline><fo:inline font-style="italic">Luxusní restaurace</fo:inline><fo:inline> | </fo:inline></fo:block><fo:block>Ikonická restaurace v Praze, známá pro svůj krásný interiér ve stylu art deco.</fo:block><fo:block>Menu si můžete prohlédnout : 
+            <fo:basic-link external-destination="https://www.cafeimperial.cz/jidelni-listek-2/">
+                zde
+            </fo:basic-link>.
+        </fo:block><fo:block>Naše hodnocení</fo:block><fo:block/><fo:block>
+            Místo:  ★
+        </fo:block><fo:block>
+            Obsluha:  ★
+        </fo:block><fo:block>
+            Jídlo:  ★
+        </fo:block><fo:block>
+            Finální hodnocení:  ★
+        </fo:block><fo:block>Nejlepší jídlo</fo:block><fo:block>Čokoládový fondant - 120CZK</fo:block><fo:block>Otevírací doba</fo:block><fo:block>pondeli: 
+                07:00:00 - 23:00:00</fo:block><fo:block>utery: 
+                07:00:00 - 23:00:00</fo:block><fo:block>streda: 
+                07:00:00 - 23:00:00</fo:block><fo:block>ctvrtek: 
+                07:00:00 - 23:00:00</fo:block><fo:block>patek: 
+                07:00:00 - 23:00:00</fo:block><fo:block>sobota: 
+                07:00:00 - 23:00:00</fo:block><fo:block>nedele: 
+                07:00:00 - 23:00:00</fo:block><fo:block>Další informace</fo:block><fo:block>~ Cena/osoba: 1000CZK</fo:block><fo:block>Platba kartou: ano</fo:block><fo:block>Qerko: ne</fo:block><fo:block>Polední menu: každý den</fo:block><fo:block>Datum návštěvy: 2024-12-05</fo:block></fo:block><fo:block break-before="page"/><fo:block><fo:block>Goldies</fo:block><fo:block>Berlín | Německo</fo:block><fo:block><fo:inline font-style="italic">Burgery</fo:inline><fo:inline> | </fo:inline></fo:block><fo:block>Nejlepší burgery v Praze. Sedněte na Hlaváku do vlaku, za 4 hoďky jste v Berlíně a šup na Goldies!</fo:block><fo:block>Menu si můžete prohlédnout : 
+            <fo:basic-link external-destination="https://www.goldies-smashburger.de/#Menu">
+                zde
+            </fo:basic-link>.
+        </fo:block><fo:block>Naše hodnocení</fo:block><fo:block/><fo:block>
+            Místo:  ★
+        </fo:block><fo:block>
+            Obsluha:  ★
+        </fo:block><fo:block>
+            Jídlo:  ★
+        </fo:block><fo:block>
+            Finální hodnocení:  ★
+        </fo:block><fo:block>Nejlepší jídlo</fo:block><fo:block>Super Smash BLT Double - 25EUR</fo:block><fo:block>Otevírací doba</fo:block><fo:block>pondeli: 
+                12:00:00 - 22:00:00</fo:block><fo:block>utery: 
+                12:00:00 - 22:00:00</fo:block><fo:block>streda: 
+                12:00:00 - 22:00:00</fo:block><fo:block>ctvrtek: 
+                12:00:00 - 22:00:00</fo:block><fo:block>patek: 
+                12:00:00 - 00:00:00</fo:block><fo:block>sobota: 
+                12:00:00 - 00:00:00</fo:block><fo:block>nedele: 
+                12:00:00 - 22:00:00</fo:block><fo:block>Další informace</fo:block><fo:block>~ Cena/osoba: 25EUR</fo:block><fo:block>Platba kartou: ano</fo:block><fo:block>Qerko: ne</fo:block><fo:block>Polední menu: ne</fo:block><fo:block>Datum návštěvy: 2024-06-06</fo:block></fo:block></fo:block></fo:flow></fo:page-sequence></fo:root>
