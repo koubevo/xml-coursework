@@ -179,28 +179,38 @@
         <fo:block keep-together.within-page="always">
             <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Otevírací doba</fo:block>
             <fo:block space-after="2mm">
-                <xsl:for-each select="r:oteviraci_doba/*">
-                    <fo:block>
-                        <xsl:choose>
-                            <xsl:when test="local-name() = 'pondeli'">Pondělí</xsl:when>
-                            <xsl:when test="local-name() = 'utery'">Úterý</xsl:when>
-                            <xsl:when test="local-name() = 'streda'">Středa</xsl:when>
-                            <xsl:when test="local-name() = 'ctvrtek'">Čtvrtek</xsl:when>
-                            <xsl:when test="local-name() = 'patek'">Pátek</xsl:when>
-                            <xsl:when test="local-name() = 'sobota'">Sobota</xsl:when>
-                            <xsl:when test="local-name() = 'nedele'">Neděle</xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of select="local-name()"/>
-                            </xsl:otherwise>
-                        </xsl:choose>:  
-                        <xsl:choose>
-                            <xsl:when test="@zavreno='true'">Zavřeno</xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of select="format-time(xs:time(r:od), '[H01]:[m01]')"/> - <xsl:value-of select="format-time(xs:time(r:do), '[H01]:[m01]')"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </fo:block>
-                </xsl:for-each>
+                <fo:table border-collapse="collapse" border="solid 1pt #001427">
+                    <fo:table-body>
+                        <xsl:for-each select="r:oteviraci_doba/*">
+                            <fo:table-row>
+                                <fo:table-cell border="solid 1pt #001427" padding="4pt">
+                                    <fo:block>
+                                        <xsl:choose>
+                                            <xsl:when test="local-name() = 'pondeli'">Pondělí</xsl:when>
+                                            <xsl:when test="local-name() = 'utery'">Úterý</xsl:when>
+                                            <xsl:when test="local-name() = 'streda'">Středa</xsl:when>
+                                            <xsl:when test="local-name() = 'ctvrtek'">Čtvrtek</xsl:when>
+                                            <xsl:when test="local-name() = 'patek'">Pátek</xsl:when>
+                                            <xsl:when test="local-name() = 'sobota'">Sobota</xsl:when>
+                                            <xsl:when test="local-name() = 'nedele'">Neděle</xsl:when>
+                                            <xsl:otherwise><xsl:value-of select="local-name()"/></xsl:otherwise>
+                                        </xsl:choose>
+                                    </fo:block>
+                                </fo:table-cell>
+                                <fo:table-cell border="solid 1pt #001427" padding="4pt">
+                                    <fo:block>
+                                        <xsl:choose>
+                                            <xsl:when test="@zavreno='true'">Zavřeno</xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="format-time(xs:time(r:od), '[H01]:[m01]')"/> - <xsl:value-of select="format-time(xs:time(r:do), '[H01]:[m01]')"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </fo:block>
+                                </fo:table-cell>
+                            </fo:table-row>
+                        </xsl:for-each>
+                    </fo:table-body>
+                </fo:table>
             </fo:block>
         </fo:block>
     </xsl:template>
