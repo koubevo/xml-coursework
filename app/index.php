@@ -45,34 +45,48 @@
 
                 <h2 class="my">Otevírací doba</h2>
                 <section class="otviracka">
-                    <label for="pondeli_od">Pondělí - Od:</label>
-                    <input type="time" id="pondeli_od" name="pondeli_od">
-                    <label for="pondeli_do">Do:</label>
-                    <input type="time" id="pondeli_do" name="pondeli_do"><br>
-                    <label for="utery_od">Úterý - Od:</label>
-                    <input type="time" id="utery_od" name="utery_od">
-                    <label for="utery_do">Do:</label>
-                    <input type="time" id="utery_do" name="utery_do"><br>
-                    <label for="streda_od">Středa - Od:</label>
-                    <input type="time" id="streda_od" name="streda_od">
-                    <label for="streda_do">Do:</label>
-                    <input type="time" id="streda_do" name="streda_do"><br>
-                    <label for="ctvrtek_od">Čtvrtek - Od:</label>
-                    <input type="time" id="ctvrtek_od" name="ctvrtek_od">
-                    <label for="ctvrtek_do">Do:</label>
-                    <input type="time" id="ctvrtek_do" name="ctvrtek_do"><br>
-                    <label for="patek_od">Pátek - Od:</label>
-                    <input type="time" id="patek_od" name="patek_od">
-                    <label for="patek_do">Do:</label>
-                    <input type="time" id="patek_do" name="patek_do"><br>
-                    <label for="sobota_od">Sobota - Od:</label>
-                    <input type="time" id="sobota_od" name="sobota_od">
-                    <label for="sobota_do">Do:</label>
-                    <input type="time" id="sobota_do" name="sobota_do"><br>
-                    <label for="sobota_od">Neděle - Od:</label>
-                    <input type="time" id="nedele_od" name="nedele_od">
-                    <label for="sobota_do">Do:</label>
-                    <input type="time" id="nedele_do" name="nedele_do"><br>
+                    <div class="den">
+                        <label for="pondeli_od">Pondělí - Od:</label>
+                        <input type="time" id="pondeli_od" name="pondeli_od">
+                        <label for="pondeli_do">Do:</label>
+                        <input type="time" id="pondeli_do" name="pondeli_do">
+                    </div>
+                    <div class="den">
+                        <label for="utery_od">Úterý - Od:</label>
+                        <input type="time" id="utery_od" name="utery_od">
+                        <label for="utery_do">Do:</label>
+                        <input type="time" id="utery_do" name="utery_do">
+                    </div>
+                    <div class="den">
+                        <label for="streda_od">Středa - Od:</label>
+                        <input type="time" id="streda_od" name="streda_od">
+                        <label for="streda_do">Do:</label>
+                        <input type="time" id="streda_do" name="streda_do">
+                    </div>
+                    <div class="den">
+                        <label for="ctvrtek_od">Čtvrtek - Od:</label>
+                        <input type="time" id="ctvrtek_od" name="ctvrtek_od">
+                        <label for="ctvrtek_do">Do:</label>
+                        <input type="time" id="ctvrtek_do" name="ctvrtek_do">
+                    </div>
+                    <div class="den">
+                        <label for="patek_od">Pátek - Od:</label>
+                        <input type="time" id="patek_od" name="patek_od">
+                        <label for="patek_do">Do:</label>
+                        <input type="time" id="patek_do" name="patek_do">
+                    </div>
+                    <div class="den">
+                        <label for="sobota_od">Sobota - Od:</label>
+                        <input type="time" id="sobota_od" name="sobota_od">
+                        <label for="sobota_do">Do:</label>
+                        <input type="time" id="sobota_do" name="sobota_do">
+                    </div>
+                    <div class="den">
+                        <label for="sobota_od">Neděle - Od:</label>
+                        <input type="time" id="nedele_od" name="nedele_od">
+                        <label for="sobota_do">Do:</label>
+                        <input type="time" id="nedele_do" name="nedele_do">
+                    </div>
                 </section>
 
 
@@ -87,18 +101,18 @@
                             <option value="GBP">GBP (Britská libra)</option>
                         </select>
                     </section>
-                    <label for="karta">Platba kartou</label>
+                    <label for="karta" class="mb">Platba kartou</label>
                     <select name="platba_kartou" id="karta" required>
                         <option value="ano">Ano</option>
                         <option value="ne">Ne</option>
                         <option value="někdy">Někdy</option>
                     </select>
-                    <label for="qerko">Qerko</label>
+                    <label for="qerko" class="mb">Qerko</label>
                     <select name="qerko" id="qerko" required>
                         <option value="ano">Ano</option>
                         <option value="ne">Ne</option>
                     </select>
-                    <label for="poledni_menu">Polední menu</label>
+                    <label for="poledni_menu" class="mb">Polední menu</label>
                     <select name="poledni_menu" id="poledni_menu" required>
                         <option value="každý den">Každý den</option>
                         <option value="pracovní dny">Pracovní dny</option>
@@ -107,7 +121,7 @@
                     </select>
                 </section>
 
-                <label for="date">Datum návštěvy</label>
+                <label for="date" class="mb">Datum návštěvy</label>
                 <input id="date" type="date" name="datum" placeholder="Datum návštěvy">
                 <input type="submit" class="submit" placeholder="Přidat restauraci">
             </form>
