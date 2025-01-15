@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <div>
-        <h1>Přidej novou restauraci</h1>
+    <div class="new">
+        <h1 class="mb">Přidej novou restauraci</h1>
         <section>
             <form method="post" action="add_restaurant.php">
                 <input type="text" placeholder="Název restaurace" name="nazev" required>
@@ -18,66 +18,98 @@
                 <input type="text" placeholder="Majitel" name="majitel">
                 <input type="text" placeholder="Město" name="mesto" required>
                 <input type="text" placeholder="Stát" name="stat" required>
-                <input type="url" paceholder="Menu" name="menu" required>
+                <input type="url" placeholder="Menu (URL)" name="menu" required>
                 <input type="text" placeholder="Kategorie (oddělit čárkou)" name="kategorie" required>
 
-                <h2>Hodnocení</h2>
+                <h2 class="my">Hodnocení</h2>
                 <textarea name="slovni" placeholder="Hodnocení slovní" required></textarea>
                 <input type="number" name="misto" step="0.1" placeholder="Místo" min="0" max="5" required>
                 <input type="number" name="obsluha" step="0.1" placeholder="Obsluha" min="0" max="5" required>
                 <input type="number" name="jidlo" step="0.1" placeholder="Jídlo" min="0" max="5" required>
                 <input type="number" name="finalni" step="0.1" placeholder="Finální hodnocení" min="0" max="5" required>
 
-                <h3>Nejlepší jídlo</h3>
+                <h3 class="my">Nejlepší jídlo</h3>
                 <input type="text" placeholder="Název jídla" name="top_jidlo_nazev" required>
-                <input type="number" placeholder="Cena jídla" name="top_jidlo_cena" required>
-                <select name="top_jidlo_mena" required>
-                    <option value="CZK">CZK (Česká koruna)</option>
-                    <option value="EUR">EUR (Euro)</option>
-                    <option value="USD">USD (Americký dolar)</option>
-                    <option value="GBP">GBP (Britská libra)</option>
-                </select>
+                <section class="cena_mena">
+                    <input type="number" placeholder="Cena jídla" name="top_jidlo_cena" required>
+                    <select name="top_jidlo_mena" required>
+                        <option value="CZK">CZK (Česká koruna)</option>
+                        <option value="EUR">EUR (Euro)</option>
+                        <option value="USD">USD (Americký dolar)</option>
+                        <option value="GBP">GBP (Britská libra)</option>
+                    </select>
+                </section>
                 <input type="text" placeholder="Název souboru fotky" name="top_jidlo_foto"
                     pattern="[\w,\s-]+\.(jpg|jpeg|png)" required>
 
 
-                <h2>Otevírací doba</h2>
+                <h2 class="my">Otevírací doba</h2>
+                <section class="otviracka">
+                    <label for="pondeli_od">Pondělí - Od:</label>
+                    <input type="time" id="pondeli_od" name="pondeli_od">
+                    <label for="pondeli_do">Do:</label>
+                    <input type="time" id="pondeli_do" name="pondeli_do"><br>
+                    <label for="utery_od">Úterý - Od:</label>
+                    <input type="time" id="utery_od" name="utery_od">
+                    <label for="utery_do">Do:</label>
+                    <input type="time" id="utery_do" name="utery_do"><br>
+                    <label for="streda_od">Středa - Od:</label>
+                    <input type="time" id="streda_od" name="streda_od">
+                    <label for="streda_do">Do:</label>
+                    <input type="time" id="streda_do" name="streda_do"><br>
+                    <label for="ctvrtek_od">Čtvrtek - Od:</label>
+                    <input type="time" id="ctvrtek_od" name="ctvrtek_od">
+                    <label for="ctvrtek_do">Do:</label>
+                    <input type="time" id="ctvrtek_do" name="ctvrtek_do"><br>
+                    <label for="patek_od">Pátek - Od:</label>
+                    <input type="time" id="patek_od" name="patek_od">
+                    <label for="patek_do">Do:</label>
+                    <input type="time" id="patek_do" name="patek_do"><br>
+                    <label for="sobota_od">Sobota - Od:</label>
+                    <input type="time" id="sobota_od" name="sobota_od">
+                    <label for="sobota_do">Do:</label>
+                    <input type="time" id="sobota_do" name="sobota_do"><br>
+                    <label for="sobota_od">Neděle - Od:</label>
+                    <input type="time" id="nedele_od" name="nedele_od">
+                    <label for="sobota_do">Do:</label>
+                    <input type="time" id="nedele_do" name="nedele_do"><br>
+                </section>
 
-                <label for="pondeli_od">Pondělí - Od:</label>
-                <input type="time" id="pondeli_od" name="pondeli_od">
-                <label for="pondeli_do">Do:</label>
-                <input type="time" id="pondeli_do" name="pondeli_do"><br>
 
-                <label for="utery_od">Úterý - Od:</label>
-                <input type="time" id="utery_od" name="utery_od">
-                <label for="utery_do">Do:</label>
-                <input type="time" id="utery_do" name="utery_do"><br>
+                <h2 class="my">Další informace</h2>
+                <section class="">
+                    <section class="cena_mena">
+                        <input type="number" placeholder="Cena/osoba" name="cena_osoba" required>
+                        <select name="cena_osoba_mena" required>
+                            <option value="CZK">CZK (Česká koruna)</option>
+                            <option value="EUR">EUR (Euro)</option>
+                            <option value="USD">USD (Americký dolar)</option>
+                            <option value="GBP">GBP (Britská libra)</option>
+                        </select>
+                    </section>
+                    <label for="karta">Platba kartou</label>
+                    <select name="platba_kartou" id="karta" required>
+                        <option value="ano">Ano</option>
+                        <option value="ne">Ne</option>
+                        <option value="někdy">Někdy</option>
+                    </select>
+                    <label for="qerko">Qerko</label>
+                    <select name="qerko" id="qerko" required>
+                        <option value="ano">Ano</option>
+                        <option value="ne">Ne</option>
+                    </select>
+                    <label for="poledni_menu">Polední menu</label>
+                    <select name="poledni_menu" id="poledni_menu" required>
+                        <option value="každý den">Každý den</option>
+                        <option value="pracovní dny">Pracovní dny</option>
+                        <option value="víkendy">Víkendy</option>
+                        <option value="ne">Ne</option>
+                    </select>
+                </section>
 
-                <label for="streda_od">Středa - Od:</label>
-                <input type="time" id="streda_od" name="streda_od">
-                <label for="streda_do">Do:</label>
-                <input type="time" id="streda_do" name="streda_do"><br>
-
-                <label for="ctvrtek_od">Čtvrtek - Od:</label>
-                <input type="time" id="ctvrtek_od" name="ctvrtek_od">
-                <label for="ctvrtek_do">Do:</label>
-                <input type="time" id="ctvrtek_do" name="ctvrtek_do"><br>
-
-                <label for="patek_od">Pátek - Od:</label>
-                <input type="time" id="patek_od" name="patek_od">
-                <label for="patek_do">Do:</label>
-                <input type="time" id="patek_do" name="patek_do"><br>
-
-                <label for="sobota_od">Sobota - Od:</label>
-                <input type="time" id="sobota_od" name="sobota_od">
-                <label for="sobota_do">Do:</label>
-                <input type="time" id="sobota_do" name="sobota_do"><br>
-
-                <label for="sobota_od">Neděle - Od:</label>
-                <input type="time" id="nedele_od" name="nedele_od">
-                <label for="sobota_do">Do:</label>
-                <input type="time" id="nedele_do" name="nedele_do"><br>
-
+                <label for="date">Datum návštěvy</label>
+                <input id="date" type="date" name="datum" placeholder="Datum návštěvy">
+                <input type="submit" class="submit" placeholder="Přidat restauraci">
             </form>
         </section>
     </div>

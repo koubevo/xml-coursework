@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -53,6 +54,11 @@ p {
     margin-bottom: 16px;
 }
 
+.my {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 .back {
     position: absolute;
     top: 6px;
@@ -101,4 +107,44 @@ img {
     max-width: 300px;
     display: block;
     margin: auto;
+}
+
+form {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+input, textarea, select {
+    padding: 8px 6px;
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.submit {
+    background-color: #FFC914;
+    color: #001427;
+    font-weight: bold;
+    border-radius: 6px;
+    width: auto;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    margin: 20px 10%;
+}
+
+.cena_mena {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.cena_mena input {
+    margin: 0;
+}
+
+.cena_mena select {
+    margin: 0;
 }
