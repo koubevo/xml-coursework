@@ -181,7 +181,7 @@
     <xsl:template name="oteviraci_doba">
         <fo:block keep-together.within-page="always">
             <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Otevírací doba</fo:block>
-            <fo:block space-after="2mm">
+            <fo:block space-after="3mm">
                 <fo:table border-collapse="collapse" border="solid 1pt #001427">
                     <fo:table-body>
                         <xsl:for-each select="r:oteviraci_doba/*">

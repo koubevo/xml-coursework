@@ -160,11 +160,18 @@
         <h2 class="mb">Naše hodnocení</h2>
         <p class="mb"><xsl:value-of select="slovni"/></p>
         <ul class="mb-2">
-            <!-- diakritika -->
             <xsl:for-each select="hvezdicky/*">
                 <li>
-                    <xsl:value-of select="local-name()"/>: 
-                    <xsl:value-of select="."/>
+                    <xsl:choose>
+                        <xsl:when test="local-name() = 'misto'">Místo</xsl:when>
+                        <xsl:when test="local-name() = 'obsluha'">Obsluha</xsl:when>
+                        <xsl:when test="local-name() = 'jidlo'">Jídlo</xsl:when>
+                        <xsl:when test="local-name() = 'finalni'">Finální hodnocení</xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="local-name()"/>
+                        </xsl:otherwise>
+                    </xsl:choose>:
+                        <xsl:value-of select="."/>
                     <xsl:choose>
                         <xsl:when test="number(.) &lt; 4"> ☆</xsl:when>
                         <xsl:otherwise> ★</xsl:otherwise>
@@ -172,7 +179,8 @@
                 </li>
             </xsl:for-each>
         </ul>
-    </xsl:template>   
+    </xsl:template>
+    
     
     <xsl:template match="top_jidlo">
         <h3 class="mb">Nejlepší jídlo</h3>
