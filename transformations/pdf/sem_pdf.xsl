@@ -60,6 +60,9 @@
                             <fo:basic-link internal-destination="{r:id}">
                                 <xsl:value-of select="r:nazev"/>
                             </fo:basic-link>
+                            <fo:inline font-size="10pt" color="gray">
+                                (Strana: <fo:page-number-citation ref-id="{r:id}"/>)
+                            </fo:inline>
                         </fo:block>
                     </xsl:for-each>
                 </fo:flow>
