@@ -57,11 +57,11 @@
                     </fo:block>
                     <xsl:for-each select="/r:recenze/r:restaurace">
                         <fo:block font-size="14pt" space-before="10pt">
-                            <fo:basic-link internal-destination="{r:id}">
+                            <fo:basic-link internal-destination="id{r:id}">
                                 <xsl:value-of select="r:nazev"/>
                             </fo:basic-link>
                             <fo:inline font-size="10pt" color="gray">
-                                (Strana: <fo:page-number-citation ref-id="{r:id}"/>)
+                                (Strana: <fo:page-number-citation ref-id="id{r:id}"/>)
                             </fo:inline>
                         </fo:block>
                     </xsl:for-each>
@@ -93,7 +93,7 @@
     <xsl:template match="r:recenze">
         <xsl:for-each select="r:restaurace">
             <fo:block break-before="page"/>
-            <fo:block id="{r:id}">
+            <fo:block id="id{r:id}">
                 <xsl:call-template name="nazev"/>
                 <xsl:call-template name="obrazek"></xsl:call-template>
                 <xsl:call-template name="lokalita"/>
