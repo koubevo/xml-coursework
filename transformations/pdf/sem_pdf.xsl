@@ -148,24 +148,23 @@
         </fo:block>
     </xsl:template>
     
-    <xsl:template name="hodnoceni">        
-        <!-- HVEZDICKY!! -->
+    <xsl:template name="hodnoceni">
         <fo:block keep-together.within-page="always">
             <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Naše hodnocení</fo:block>
             <fo:block space-after="1mm">
                 <xsl:value-of select="r:hodnoceni/r:slovni"/>
             </fo:block>
             <fo:block>
-                Místo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:misto"/> ★
+                Místo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:misto"/>
             </fo:block>
             <fo:block>
-                Obsluha: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:obsluha"/> ★
+                Obsluha: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:obsluha"/>
             </fo:block>
             <fo:block>
-                Jídlo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:jidlo"/> ★
+                Jídlo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:jidlo"/>
             </fo:block>
             <fo:block space-after="2mm">
-                Finální hodnocení: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:finalni"/> ★
+                Finální hodnocení: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:finalni"/>
             </fo:block>
         </fo:block>
     </xsl:template>
