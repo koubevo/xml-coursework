@@ -137,7 +137,7 @@
     
     <xs:complexType name="cenaType">
         <xs:simpleContent>
-            <xs:extension base="xs:integer">
+            <xs:extension base="intgr">
                 <xs:attribute name="mena" use="required">
                     <xs:simpleType>
                         <xs:restriction base="strng">
@@ -152,6 +152,11 @@
         </xs:simpleContent>
     </xs:complexType>
     
+    <xs:simpleType name="intgr">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:simpleType name="fotoType">
         <xs:restriction base="strng">
