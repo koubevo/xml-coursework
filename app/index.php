@@ -47,45 +47,45 @@
                 <section class="otviracka">
                     <div class="den">
                         <label for="pondeli_od">Pondělí - Od:</label>
-                        <input type="time" id="pondeli_od" name="pondeli_od">
+                        <input type="time" id="pondeli_od" name="pondeli_od" required>
                         <label for="pondeli_do">Do:</label>
-                        <input type="time" id="pondeli_do" name="pondeli_do">
+                        <input type="time" id="pondeli_do" name="pondeli_do" required>
                     </div>
                     <div class="den">
                         <label for="utery_od">Úterý - Od:</label>
-                        <input type="time" id="utery_od" name="utery_od">
+                        <input type="time" id="utery_od" name="utery_od" required>
                         <label for="utery_do">Do:</label>
-                        <input type="time" id="utery_do" name="utery_do">
+                        <input type="time" id="utery_do" name="utery_do" required>
                     </div>
                     <div class="den">
                         <label for="streda_od">Středa - Od:</label>
-                        <input type="time" id="streda_od" name="streda_od">
+                        <input type="time" id="streda_od" name="streda_od" required>
                         <label for="streda_do">Do:</label>
-                        <input type="time" id="streda_do" name="streda_do">
+                        <input type="time" id="streda_do" name="streda_do" required>
                     </div>
                     <div class="den">
                         <label for="ctvrtek_od">Čtvrtek - Od:</label>
-                        <input type="time" id="ctvrtek_od" name="ctvrtek_od">
+                        <input type="time" id="ctvrtek_od" name="ctvrtek_od" required>
                         <label for="ctvrtek_do">Do:</label>
-                        <input type="time" id="ctvrtek_do" name="ctvrtek_do">
+                        <input type="time" id="ctvrtek_do" name="ctvrtek_do" required>
                     </div>
                     <div class="den">
                         <label for="patek_od">Pátek - Od:</label>
-                        <input type="time" id="patek_od" name="patek_od">
+                        <input type="time" id="patek_od" name="patek_od" required>
                         <label for="patek_do">Do:</label>
-                        <input type="time" id="patek_do" name="patek_do">
+                        <input type="time" id="patek_do" name="patek_do" required>
                     </div>
                     <div class="den">
                         <label for="sobota_od">Sobota - Od:</label>
-                        <input type="time" id="sobota_od" name="sobota_od">
+                        <input type="time" id="sobota_od" name="sobota_od" required>
                         <label for="sobota_do">Do:</label>
-                        <input type="time" id="sobota_do" name="sobota_do">
+                        <input type="time" id="sobota_do" name="sobota_do" required>
                     </div>
                     <div class="den">
                         <label for="sobota_od">Neděle - Od:</label>
-                        <input type="time" id="nedele_od" name="nedele_od">
+                        <input type="time" id="nedele_od" name="nedele_od" required>
                         <label for="sobota_do">Do:</label>
-                        <input type="time" id="nedele_do" name="nedele_do">
+                        <input type="time" id="nedele_do" name="nedele_do" required>
                     </div>
                 </section>
 
@@ -122,9 +122,8 @@
                 </section>
 
                 <label for="date" class="mb">Datum návštěvy</label>
-                <input id="date" type="date" name="datum" placeholder="Datum návštěvy">
-                <input type="submit" class="submit" placeholder="Přidat restauraci">
-            </form>
+                <input id="date" type="date" name="datum" placeholder="Datum návštěvy" required>
+                <input type="submit" class="submit" value="Přidat restauraci">            </form>
         </section>
     </div>
 </body>

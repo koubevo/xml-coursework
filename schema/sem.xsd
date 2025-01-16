@@ -5,14 +5,10 @@
     xmlns="urn:x-koubevo:schemas:restaurace">
     
     <xs:element name="recenze" type="recenzeType">
-        <xs:key name="restauraceKey">
-            <xs:selector xpath="restaurace"/>
+        <xs:key name="uniqueRestauraceId">
+            <xs:selector xpath=".//restaurace"/>
             <xs:field xpath="id"/>
         </xs:key>
-        <xs:keyref name="topJidloRef" refer="restauraceKey">
-            <xs:selector xpath="restaurace/top_jidlo"/>
-            <xs:field xpath="@ref_restaurace_id"/>
-        </xs:keyref>
     </xs:element>
         
     <xs:complexType name="recenzeType">
@@ -24,11 +20,11 @@
     <xs:complexType name="restauraceType">
         <xs:sequence>
             <xs:element name="id" type="idType"/>
-            <xs:element name="nazev" type="nazevType"/>
-            <xs:element name="popis" type="popisType"/>
+            <xs:element name="nazev" type="strngType"/>
+            <xs:element name="popis" type="strngType"/>
             <xs:element name="majitel" type="majitelType"/>
-            <xs:element name="mesto" type="mestoType"/>
-            <xs:element name="stat" type="statType"/>
+            <xs:element name="mesto" type="strngType"/>
+            <xs:element name="stat" type="strngType"/>
             <xs:element name="oteviraci_doba" type="oteviraciDobaType"/>
             <xs:element name="menu" type="menuType"/>
             <xs:element name="kategorie" type="kategorieType" maxOccurs="unbounded"/>
@@ -49,6 +45,11 @@
         </xs:restriction>
     </xs:simpleType>
     
+    <xs:simpleType name="strngType">
+        <xs:restriction base="strng"/>
+    </xs:simpleType>
+    
+    <!--
     <xs:simpleType name="nazevType">
         <xs:restriction base="strng"/>
     </xs:simpleType>
@@ -57,18 +58,19 @@
         <xs:restriction base="strng"/>
     </xs:simpleType>
     
-    <xs:simpleType name="majitelType">
-        <xs:restriction base="xs:string">
-            <xs:minLength value="0"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
     <xs:simpleType name="mestoType">
         <xs:restriction base="strng"/>
     </xs:simpleType>
     
     <xs:simpleType name="statType">
         <xs:restriction base="strng"/>
+    </xs:simpleType>
+     -->
+    
+    <xs:simpleType name="majitelType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="0"/>
+        </xs:restriction>
     </xs:simpleType>
     
     <xs:complexType name="oteviraciDobaType">
@@ -95,20 +97,13 @@
         <xs:restriction base="xs:anyURI"/>
     </xs:simpleType>
     
-    <xs:simpleType name="kategorieType">
-        <xs:restriction base="strng"/>
-    </xs:simpleType>
     
     <xs:complexType name="hodnoceniType">
         <xs:sequence>
-            <xs:element name="slovni" type="slovniType"/>
+            <xs:element name="slovni" type="strngType"/>
             <xs:element name="hvezdicky" type="hvezdickyType"/>
         </xs:sequence>
     </xs:complexType>
-    
-    <xs:simpleType name="slovniType">
-        <xs:restriction base="strng"/>
-    </xs:simpleType>
     
     <xs:complexType name="hvezdickyType">
         <xs:sequence>
@@ -128,7 +123,7 @@
     
     <xs:complexType name="topJidloType">
         <xs:sequence>
-            <xs:element name="nazev" type="nazevType"/>
+            <xs:element name="nazev" type="strngType"/>
             <xs:element name="cena" type="cenaType"/>
             <xs:element name="foto" type="fotoType"/>
         </xs:sequence>
@@ -138,19 +133,19 @@
     <xs:complexType name="cenaType">
         <xs:simpleContent>
             <xs:extension base="intgr">
-                <xs:attribute name="mena" use="required">
-                    <xs:simpleType>
-                        <xs:restriction base="strng">
-                            <xs:enumeration value="USD"/>
-                            <xs:enumeration value="CZK"/>
-                            <xs:enumeration value="EUR"/>
-                            <xs:enumeration value="GBP"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:attribute>
+                <xs:attribute name="mena" type="menaType" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+    
+    <xs:simpleType name="menaType">
+        <xs:restriction base="strng">
+            <xs:enumeration value="USD"/>
+            <xs:enumeration value="CZK"/>
+            <xs:enumeration value="EUR"/>
+            <xs:enumeration value="GBP"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:simpleType name="intgr">
         <xs:restriction base="xs:integer">
@@ -192,7 +187,7 @@
         <xs:restriction base="xs:date"/>
     </xs:simpleType>
     
-    <xs:simpleType name="strng">
+    <xs:simpleType name="strngType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
         </xs:restriction>
