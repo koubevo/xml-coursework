@@ -51,21 +51,22 @@
                     </fo:block>
                 </fo:static-content>
                 
-                <fo:flow flow-name="xsl-region-body">
+                <fo:flow flow-name="xsl-region-body" font-family="Calibri">
                     <fo:block space-before="10mm" font-size="16pt" font-weight="bold">
                         Seznam restaurací
                     </fo:block>
                     <xsl:for-each select="/r:recenze/r:restaurace">
-                        <fo:block font-size="14pt" space-before="10pt">
+                        <fo:block text-align-last="justify" font-size="14pt" space-before="10pt">
                             <fo:basic-link internal-destination="id{r:id}">
                                 <xsl:value-of select="r:nazev"/>
+                                <fo:leader leader-pattern="dots"/>
+                                <fo:page-number-citation ref-id="id{r:id}"/>
                             </fo:basic-link>
-                            <fo:inline font-size="10pt" color="gray">
-                                (Strana: <fo:page-number-citation ref-id="id{r:id}"/>)
-                            </fo:inline>
                         </fo:block>
                     </xsl:for-each>
                 </fo:flow>
+                
+                
             </fo:page-sequence>
             
             <fo:page-sequence master-reference="a4" font-family="Verdana" color="#001427" font-size="11pt">
@@ -143,31 +144,63 @@
                 </xsl:if>
             </fo:block>
             <fo:block space-after="2mm"><xsl:apply-templates select="r:popis"/></fo:block>
-            <fo:block space-after="4mm">Menu si můžete prohlédnout: <fo:basic-link external-destination="{r:menu}" color="#FFC914" font-weight="bold">zde</fo:basic-link>.
+            <fo:block space-after="4mm">Menu si můžete prohlédnout: <fo:basic-link external-destination="{r:menu}" font-weight="bold">zde</fo:basic-link>.
             </fo:block>
         </fo:block>
     </xsl:template>
     
     <xsl:template name="hodnoceni">
-        <fo:block keep-together.within-page="always">
+        <fo:block keep-together.within-page="always" space-after="2mm">
             <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Naše hodnocení</fo:block>
-            <fo:block space-after="1mm">
-                <xsl:value-of select="r:hodnoceni/r:slovni"/>
-            </fo:block>
-            <fo:block>
-                Místo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:misto"/>
-            </fo:block>
-            <fo:block>
-                Obsluha: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:obsluha"/>
-            </fo:block>
-            <fo:block>
-                Jídlo: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:jidlo"/>
-            </fo:block>
-            <fo:block space-after="2mm">
-                Finální hodnocení: <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:finalni"/>
-            </fo:block>
+            <fo:table table-layout="auto" width="100%"> 
+                <fo:table-column column-width="40mm"/>
+                <fo:table-column/>
+                <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Místo</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:misto"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Obsluha</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:obsluha"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Jídlo</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:jidlo"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Finální hodnocení</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:hodnoceni/r:hvezdicky/r:finalni"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </fo:table-body>
+            </fo:table>
         </fo:block>
     </xsl:template>
+    
     
     <xsl:template name="nejlepsi_jidlo">
         <fo:block keep-together.within-page="always">
@@ -220,14 +253,70 @@
     
     <xsl:template name="dalsi_informace">
         <fo:block keep-together.within-page="always">
-            <fo:block font-size="16pt" font-weight="bold" space-after="2mm">Další informace</fo:block>
-            <fo:block>~ Cena/osoba: <xsl:value-of select="r:cena_osoba"/><xsl:text> </xsl:text><xsl:value-of select="r:cena_osoba/@mena"/></fo:block>
-            <fo:block>Platba kartou: <xsl:value-of select="r:platba_kartou"/></fo:block>
-            <fo:block>Qerko: <xsl:value-of select="r:qerko"/></fo:block>
-            <fo:block>Polední menu: <xsl:value-of select="r:poledni_menu"/></fo:block>
-            <fo:block>Datum návštěvy: <xsl:value-of select="format-date(xs:date(r:datum_navstevy), '[D01].[M01].[Y2]')"/></fo:block>
+            <fo:block font-size="16pt" font-weight="bold" space-after="2mm">
+                Další informace
+            </fo:block>
+            <fo:table table-layout="auto" width="100%">
+                <fo:table-column column-width="35mm"/>
+                <fo:table-column/>
+                <fo:table-body>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Cena/osoba</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:cena_osoba"/>
+                                <xsl:text> </xsl:text>
+                                <xsl:value-of select="r:cena_osoba/@mena"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Platba kartou</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:platba_kartou"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Qerko</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:qerko"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Polední menu</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="r:poledni_menu"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                    <fo:table-row>
+                        <fo:table-cell border="none">
+                            <fo:block>Datum návštěvy</fo:block>
+                        </fo:table-cell>
+                        <fo:table-cell border="none">
+                            <fo:block>
+                                <xsl:value-of select="format-date(xs:date(r:datum_navstevy), '[D01].[M01].[Y2]')"/>
+                            </fo:block>
+                        </fo:table-cell>
+                    </fo:table-row>
+                </fo:table-body>
+            </fo:table>
         </fo:block>
     </xsl:template>
+    
     
     
     

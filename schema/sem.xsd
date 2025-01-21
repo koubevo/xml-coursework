@@ -5,9 +5,9 @@
     xmlns="urn:x-koubevo:schemas:restaurace">
     
     <xs:element name="recenze" type="recenzeType">
-        <xs:key name="uniqueRestauraceId">
-            <xs:selector xpath=".//restaurace"/>
-            <xs:field xpath="id"/>
+        <xs:key name="idRestauraceKey">
+            <xs:selector xpath="restaurace/id"/>
+            <xs:field xpath="."/>
         </xs:key>
     </xs:element>
         
@@ -26,8 +26,8 @@
             <xs:element name="mesto" type="strngType"/>
             <xs:element name="stat" type="strngType"/>
             <xs:element name="oteviraci_doba" type="oteviraciDobaType"/>
-            <xs:element name="menu" type="menuType"/>
-            <xs:element name="kategorie" type="kategorieType" maxOccurs="unbounded"/>
+            <xs:element name="menu" type="xs:anyURI"/>
+            <xs:element name="kategorie" type="strngType" maxOccurs="unbounded"/>
             <xs:element name="hodnoceni" type="hodnoceniType"/>
             <xs:element name="top_jidlo" type="topJidloType"/>
             <xs:element name="cena_osoba" type="cenaType"/>
@@ -44,28 +44,6 @@
             <xs:maxExclusive value="999999"/>
         </xs:restriction>
     </xs:simpleType>
-    
-    <xs:simpleType name="strngType">
-        <xs:restriction base="strng"/>
-    </xs:simpleType>
-    
-    <!--
-    <xs:simpleType name="nazevType">
-        <xs:restriction base="strng"/>
-    </xs:simpleType>
-    
-    <xs:simpleType name="popisType">
-        <xs:restriction base="strng"/>
-    </xs:simpleType>
-    
-    <xs:simpleType name="mestoType">
-        <xs:restriction base="strng"/>
-    </xs:simpleType>
-    
-    <xs:simpleType name="statType">
-        <xs:restriction base="strng"/>
-    </xs:simpleType>
-     -->
     
     <xs:simpleType name="majitelType">
         <xs:restriction base="xs:string">
@@ -92,10 +70,6 @@
         </xs:sequence>
         <xs:attribute name="zavreno" type="xs:boolean" use="optional"/>
     </xs:complexType>
-    
-    <xs:simpleType name="menuType">
-        <xs:restriction base="xs:anyURI"/>
-    </xs:simpleType>
     
     
     <xs:complexType name="hodnoceniType">
@@ -139,7 +113,7 @@
     </xs:complexType>
     
     <xs:simpleType name="menaType">
-        <xs:restriction base="strng">
+        <xs:restriction base="strngType">
             <xs:enumeration value="USD"/>
             <xs:enumeration value="CZK"/>
             <xs:enumeration value="EUR"/>
@@ -154,13 +128,13 @@
     </xs:simpleType>
     
     <xs:simpleType name="fotoType">
-        <xs:restriction base="strng">
+        <xs:restriction base="strngType">
             <xs:pattern value="[\w,\s-]+\.(jpg|jpeg|png)"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="platbaKartouType">
-        <xs:restriction base="strng">
+        <xs:restriction base="strngType">
             <xs:enumeration value="ano"/>
             <xs:enumeration value="ne"/>
             <xs:enumeration value="někdy"/>
@@ -168,14 +142,14 @@
     </xs:simpleType>
     
     <xs:simpleType name="qerkoType">
-        <xs:restriction base="strng">
+        <xs:restriction base="strngType">
             <xs:enumeration value="ano"/>
             <xs:enumeration value="ne"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="poledniMenuType">
-        <xs:restriction base="strng">
+        <xs:restriction base="strngType">
             <xs:enumeration value="každý den"/>
             <xs:enumeration value="pracovní dny"/>
             <xs:enumeration value="víkendy"/>
